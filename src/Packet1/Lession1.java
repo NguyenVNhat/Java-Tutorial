@@ -96,14 +96,51 @@ class PrintThread extends Thread {
     }
 }
 
-class AMain {
-    public static void main(String[] args) {
-        Counter counter = new Counter();
-        IncrementThread incrementThread = new IncrementThread(counter);
-        PrintThread printThread = new PrintThread(counter);
+//class AMain {
+//    public static void main(String[] args) {
+//        Counter counter = new Counter();
+//        IncrementThread incrementThread = new IncrementThread(counter);
+//        PrintThread printThread = new PrintThread(counter);
+//
+//        incrementThread.start();
+//        printThread.start();
+//    }
+//}
 
-        incrementThread.start();
-        printThread.start();
+class ECounter {
+    private int count = 0;
+    public synchronized void increment() {
+        count++;
+    }
+    public synchronized int getCount() {
+        return count;
+    }
+}
+//class EMain {
+//    public static void main(String[] args) {
+//        Counter counter = new Counter();
+//        Thread incrementThread = new Thread(() -> {
+//            for (int i = 0; i < 1000; i++) {
+//                counter.increment();
+//            }
+//        });
+//        Thread printThread = new Thread(() -> {
+//                System.out.println("Count value: " + counter.getCount());
+//        });
+//        incrementThread.start();
+//        printThread.start();
+//    }
+//}
+class EMain {
+    public static void main(String[] args) {
+        int[][] a  = new int[3][4]; // cách viết đúng
+        int[][] b = {{1,2,3,4},{2,3,4,5}};
+
+//        int[][] c = new int[][]; // cách viết sai
+//        int[][] d = [[1,2,3,4],[2,3,4,5]];
+//        int[][] e = {[1,2,3,4],[2,3,4,5]};
+//        int[3][4] f = new int[][];
+
     }
 }
 
